@@ -25,3 +25,75 @@ A simple ERC-721 token used for testing purposes. Holding these NFTs can boost t
 ## Deployment
 
 This project was fully developed and tested using the Remix IDE.
+
+## Key Functionalities
+
+### Staking
+
+Users can stake ERC-20 tokens in the specified pool to earn rewards. The staked tokens are locked for a specified duration.
+
+### Unstaking
+
+After the lock duration, users can unstake their tokens from the specified pool.
+
+### Claiming Rewards
+
+Users can claim their accumulated rewards from the specified pool.
+
+### Emergency Withdrawal
+
+Users can withdraw their staked tokens without claiming rewards in case of emergencies.
+
+### Referral System
+
+Users can set a referrer to earn additional rewards for both the referrer and the referee.
+
+### Pausing/Unpausing
+
+The contract owner can pause and unpause the contract to prevent any actions during emergencies.
+
+## Contract Interfaces
+
+### YieldFarm
+
+- `initialize()`
+- `addPool()`
+- `stake()`
+- `unstake()`
+- `claimReward()`
+- `emergencyWithdraw()`
+- `setReferrer()`
+- `setRewardRate()`
+- `setLockDuration()`
+- `setNftBoostRate()`
+- `distributeGovernanceTokens()`
+- `pause()`
+- `unpause()`
+
+### YieldFarmTest
+
+- `constructor()`
+- `testStake()`
+- `testUnstake()`
+- `testClaimReward()`
+- `testEmergencyWithdraw()`
+- `testPauseAndUnpause()`
+- `testReferralSystem()`
+
+#### TestToken
+
+- `constructor(string memory name, string memory symbol, uint256 initialSupply)`
+
+#### TestNFT
+
+- `constructor(string memory name, string memory symbol)`
+- `mint(address to)`
+
+## Notes
+
+- This project utilizes OpenZeppelin's upgradeable contracts for enhanced security and upgradeability.
+- The contract code includes comprehensive comments and is designed to be easily understandable and maintainable.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
